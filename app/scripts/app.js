@@ -17,7 +17,7 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'LocalStorageModule',
-    'angular-loading-bar'
+    'angular-loading-bar',
   ]);
 
 app.config(function ($httpProvider) {
@@ -26,26 +26,30 @@ app.config(function ($httpProvider) {
 
 
 app.config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'loginController'
-      })
-      .when('/signup', {
-        templateUrl: 'views/signup.html',
-        controller: 'signupController'
-      })
-      .when('/mysites', {
-        templateUrl: 'views/mysites.html',
-        controller: 'mysitesController'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  $routeProvider
+    .when('/', {
+      templateUrl: 'views/main.html'
+    })
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'loginController'
+    })
+    .when('/signup', {
+      templateUrl: 'views/signup.html',
+      controller: 'signupController'
+    })
+    .when('/mysites', {
+      templateUrl: 'views/mysites.html',
+      controller: 'mysitesController'
+    })
+    .when('/addsite', {
+      templateUrl: 'views/addsite.html',
+      controller: 'addSiteController'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+});
 
 app.constant('serverApiSettings', {
   localserverBaseUri: 'http://localhost:63187/',
