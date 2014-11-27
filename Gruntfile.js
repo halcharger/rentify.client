@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-replace');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -234,6 +236,48 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
+    replace: {
+      local: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('./config/environments/local.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['./config/config.js'],
+          dest: '<%= yeoman.app %>/scripts/services/'
+        }]
+      },
+      dev: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('./config/environments/dev.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['./config/config.js'],
+          dest: '<%= yeoman.app %>/scripts/services/'
+        }]
+      },
+      live: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('./config/environments/live.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['./config/config.js'],
+          dest: '<%= yeoman.app %>/scripts/services/'
+        }]
+      }
+    },
+
     imagemin: {
       dist: {
         files: [{
@@ -349,8 +393,7 @@ module.exports = function (grunt) {
     }
   });
 
-
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+  function serveTask(target, replaceTask){
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -361,13 +404,21 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
+      replaceTask,
       'watch'
     ]);
+  }
+
+  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+    serveTask(target, 'replace:local');
   });
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
+  grunt.registerTask('serve-dev', 'Compile then start a connect web server', function (target) {
+    serveTask(target, 'replace:dev');
+  });
+
+  grunt.registerTask('serve-live', 'Compile then start a connect web server', function (target) {
+    serveTask(target, 'replace:live');
   });
 
   grunt.registerTask('test', [
@@ -391,13 +442,29 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'filerev',
-    'usemin',
-    'htmlmin'
+    'processhtml',
+  ]);
+
+  grunt.registerTask('build-local', [
+    'replace:local',
+    'build'
+  ]);
+
+  grunt.registerTask('build-dev', [
+    'replace:dev',
+    'build'
+  ]);
+
+  grunt.registerTask('build-live', [
+    'replace:live',
+    'build'
   ]);
 
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
-    'build'
+    'build-local'
   ]);
+
 };
+

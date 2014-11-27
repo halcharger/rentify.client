@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name clientApp
- * @description
- * # clientApp
- *
- * Main module of the application.
- */
 var app = angular
   .module('rentify', [
     'ngAnimate',
@@ -18,12 +10,12 @@ var app = angular
     'ngTouch',
     'LocalStorageModule',
     'angular-loading-bar',
+    'services.config'
   ]);
 
 app.config(function ($httpProvider) {
   $httpProvider.interceptors.push('authInterceptorService');
 });
-
 
 app.config(function ($routeProvider) {
   $routeProvider
@@ -51,12 +43,3 @@ app.config(function ($routeProvider) {
     });
 });
 
-app.constant('serverApiSettings', {
-  serverBaseUri: 'http://localhost:63187/',
-  remoteserverBaseUri: 'http://rentifydev01.azurewebsites.net/',
-  client_id: 'rentifyAngularMainApp'
-});
-
-app.run(['authService', function (authService) {
-  authService.fillAuthData();
-}]);

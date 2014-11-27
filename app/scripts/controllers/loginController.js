@@ -1,10 +1,10 @@
-app.controller('loginController', ['$scope', '$location', 'serverApiSettings', 'authService',
-  function ($scope, $location, serverApiSettings, authService) {
+app.controller('loginController', ['$scope', '$location', 'configuration', 'authService',
+  function ($scope, $location, configuration, authService) {
 
     var vm = {};
 
-    var serviceBase = serverApiSettings.serverBaseUri;
-    var clientId = serverApiSettings.client_id;
+    var serviceBase = configuration.serverBaseUri;
+    var clientId = configuration.clientId;
 
     vm.loginData = {
       userName: '',

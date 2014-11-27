@@ -1,8 +1,8 @@
 'use strict';
-app.factory('tokensManagerService', ['$http', 'serverApiSettings',
-  function ($http, serverApiSettings) {
+app.factory('tokensManagerService', ['$http', 'configuration',
+  function ($http, configuration) {
 
-    var serviceBase = serverApiSettings.serverBaseUri;
+    var serviceBase = configuration.serverBaseUri;
 
     var tokenManagerServiceFactory = {};
 

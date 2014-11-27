@@ -1,11 +1,11 @@
 (function () {
   'use strict';
 
-  function controller($http, authService, serverApiSettings) {
+  function controller($http, authService, configuration) {
 
     authService.redirectToLoginIfNotAuthenticated();
 
-    var baseUri = serverApiSettings.serverBaseUri;
+    var baseUri = configuration.serverBaseUri;
 
     function getMySites(){
       return $http.post(baseUri + 'api/mysites').success(function(results){
@@ -30,7 +30,7 @@
 
   }
 
-  app.factory('sitesService', ['$http', 'authService', 'serverApiSettings', controller]);
+  app.factory('sitesService', ['$http', 'authService', 'configuration', controller]);
 
 })();
 

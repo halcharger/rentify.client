@@ -45,8 +45,8 @@
   <div id="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <p class="text-muted">Created by Allen Firth. Twitter: <a target="_blank" href="http://twitter.com/tjoudeh">@halcharger</a></p>
+        <div class="col-md-6" data-ng-controller="indexController">
+          <p class="text-muted">Created by Allen Firth. Twitter: <a target="_blank" href="http://twitter.com/halcharger">@halcharger</a> - [{{vm.environment}}]</p>
         </div>
       </div>
     </div>
@@ -77,6 +77,8 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/config.js"></script>
+    <script src="scripts/app-run.js"></script>
 
     <script src="scripts/services/authService.js" ></script>
     <script src="scripts/services/authInterceptorService.js" ></script>

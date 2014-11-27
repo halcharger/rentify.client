@@ -1,8 +1,9 @@
 'use strict';
-app.factory('authService', ['$q', '$injector', '$location', 'localStorageService', 'serverApiSettings',
-  function ($q, $injector, $location, localStorageService, serverApiSettings) {
+app.factory('authService', ['$q', '$injector', '$location', 'localStorageService', 'configuration',
+  function ($q, $injector, $location, localStorageService, configuration) {
 
-    var serviceBase = serverApiSettings.serverBaseUri;
+    console.log('configuration: ' + configuration);
+    var serviceBase = configuration.serverBaseUri;
     var $http;
     var authServiceFactory = {};
 
@@ -31,7 +32,7 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
     };
 
     var _redirectToLoginIfNotAuthenticated = function () {
-      console.log('checking if user is authenticated...')
+      console.log('checking if user is authenticated... [' + serviceBase + ']')
       if (!_authentication.isAuth) {
         console.log('user is not authenticated, redirecting to login view.')
         $location.path('login');
@@ -43,10 +44,11 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
       var data = 'grant_type=password&username=' + loginData.userName + '&password=' + loginData.password;
 
       if (loginData.useRefreshTokens) {
-        data = data + '&client_id=' + serverApiSettings.client_id;
+        data = data + '&client_id=' + configuration.clientId;
       }
 
       $http = $http || $injector.get('$http');
+      console.log('about to post to:' + serviceBase + 'token')
       return $http.post(serviceBase + 'token', data, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
         .success(function (response) {
 
@@ -72,7 +74,8 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
           _authentication.useRefreshTokens = loginData.useRefreshTokens;
 
         })
-        .error(function () {
+        .error(function (http, status, fnc, httpObj) {
+          console.log('Error encountered logging in (authService):', http, status, httpObj);
           _logOut();
         });
     };
@@ -106,12 +109,12 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
 
       if (authData && authData.useRefreshTokens) {
 
-        var data = 'grant_type=refresh_token&refresh_token=' + authData.refreshToken + '&client_id=' + serverApiSettings.client_id;
+        var data = 'grant_type=refresh_token&refresh_token=' + authData.refreshToken + '&client_id=' + configuration.clientId;
 
         localStorageService.remove('authorizationData');
 
         $http = $http || $injector.get('$http');
-        $http.post(serverApiSettings.serverBaseUri + 'token', data, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function (response) {
+        $http.post(serviceBase + 'token', data, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(function (response) {
           localStorageService.set('authorizationData', {
             token: response.access_token,
             userName: response.userName,

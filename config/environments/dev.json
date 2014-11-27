@@ -1,0 +1,4 @@
+{
+  "serveBaseUri": "http://rentifydev01.azurewebsites.net/",
+  "environment": "DEV"
+}

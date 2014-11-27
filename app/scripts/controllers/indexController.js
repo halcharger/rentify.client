@@ -1,9 +1,11 @@
 (function () {
   'use strict';
 
-  function IndexController($scope, $location, authService) {
+  function IndexController($scope, $location, authService, configuration) {
 
     var vm = {};
+
+    vm.environment = configuration.environment;
 
     vm.logOut = function () {
       authService.logOut();
@@ -16,6 +18,6 @@
 
   }
 
-  app.controller('indexController', ['$scope', '$location', 'authService', IndexController]);
+  app.controller('indexController', ['$scope', '$location', 'authService', 'configuration', IndexController]);
 
 })();
