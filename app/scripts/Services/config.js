@@ -2,7 +2,7 @@
 
 angular.module('services.config', [])
   .constant('configuration', {
-    serverBaseUri: 'http://localhost:63187/',
+    serverBaseUri: '@@serverBaseUri',
     clientId: "rentifyAngularMainApp",
-    environment: 'LOCAL'
+    environment: 'DEV'
   });

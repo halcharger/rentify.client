@@ -442,7 +442,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'filerev',
-    'processhtml',
+    'usemin',
+    'htmlmin'
   ]);
 
   grunt.registerTask('build-local', [
