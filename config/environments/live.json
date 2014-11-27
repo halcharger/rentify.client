@@ -1,5 +1,5 @@
 {
-  "serveBaseUri": "http://rentifyprod01.azurewebsites.net/",
+  "serverBaseUri": "http://rentifyprod01.azurewebsites.net/",
   "environment": "LIVE"
 
 }
