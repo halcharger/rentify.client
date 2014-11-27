@@ -52,8 +52,8 @@ app.config(function ($routeProvider) {
 });
 
 app.constant('serverApiSettings', {
-  localserverBaseUri: 'http://localhost:63187/',
-  serverBaseUri: 'http://rentifydev01.azurewebsites.net/',
+  serverBaseUri: 'http://localhost:63187/',
+  remoteserverBaseUri: 'http://rentifydev01.azurewebsites.net/',
   client_id: 'rentifyAngularMainApp'
 });
 

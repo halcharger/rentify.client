@@ -15,12 +15,17 @@
     }
 
     function addSite(site){
-      return $http.post(baseUri + 'api/mysites/add', site)
+      return $http.post(baseUri + 'api/mysites/add', site);
+    }
+
+    function deleteSite(siteUniqueId){
+      return $http.delete(baseUri + 'api/mysites/delete', {uniqueId: siteUniqueId});
     }
 
     var factory = {};
     factory.getMySites = getMySites;
     factory.addSite = addSite;
+    factory.deleteSite = deleteSite;
     return factory;
 
   }
