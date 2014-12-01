@@ -2,7 +2,7 @@
 
 angular.module('services.config', [])
   .constant('configuration', {
-    serverBaseUri: 'http://rentifydev01.azurewebsites.net/',
+    serverBaseUri: 'http://localhost:63187/',
     clientId: "rentifyAngularMainApp",
-    environment: 'DEV'
+    environment: 'LOCAL'
   });
