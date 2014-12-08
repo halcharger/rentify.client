@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function controller($scope, $location, authService, sitesService) {
+  function controller($scope, $location, authService, sitesService, notificationService) {
 
     authService.redirectToLoginIfNotAuthenticated();
 
@@ -14,7 +14,7 @@
 
     vm.addSite = function () {
       sitesService.addSite(vm.site).success(function (results) {
-        //notificationService.success('New site [' + vm.site.name + '] successully added.')
+        notificationService.success('New site [' + vm.site.name + '] successully added.');
         $location.path('mysites');
       })
         .error(function (http, status, fnc, httpObj) {
@@ -27,6 +27,6 @@
 
   }
 
-  app.controller('addSiteController', ['$scope', '$location', 'authService', 'sitesService', controller]);
+  app.controller('addSiteController', ['$scope', '$location', 'authService', 'sitesService', 'notificationService', controller]);
 
 })();

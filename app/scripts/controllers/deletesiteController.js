@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function controller($scope, $location, authService, sitesService) {
+  function controller($scope, $location, authService, sitesService, notificationService) {
 
     authService.redirectToLoginIfNotAuthenticated();
 
@@ -22,6 +22,7 @@
       sitesService.deleteSite(vm.site.uniqueId)
         .success(function(){
           //TODO: notify user that delete was successful
+          notificationService.success('The site: ' + vm.site.name + ' was successully deleted.')
           vm.cancel();
         })
         .error(function (http, status, fnc, httpObj) {
@@ -34,7 +35,7 @@
 
   }
 
-  app.controller('deletesiteController', ['$scope', '$location', 'authService', 'sitesService', controller]);
+  app.controller('deletesiteController', ['$scope', '$location', 'authService', 'sitesService', 'notificationService', controller]);
 
 })();
 

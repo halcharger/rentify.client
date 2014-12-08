@@ -10,7 +10,8 @@ var app = angular
     'ngTouch',
     'LocalStorageModule',
     'angular-loading-bar',
-    'services.config'
+    'services.config',
+    'toastr'
   ]);
 
 app.config(function ($httpProvider) {
