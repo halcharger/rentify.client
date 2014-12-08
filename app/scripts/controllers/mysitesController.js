@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function controller($scope, authService, sitesService) {
+  function controller($scope, $location, authService, sitesService) {
 
     authService.redirectToLoginIfNotAuthenticated();
 
@@ -20,12 +20,20 @@
         });
     };
 
+    function deleteSite(site){
+      console.log(site);
+      sitesService.setSiteSelectedForDeletion(site);
+      $location.path('deletesite');
+    };
+
+    vm.deleteSite = deleteSite;
+
     vm.getSites();
 
     $scope.vm = vm;
 
   }
 
-  app.controller('mysitesController', ['$scope', 'authService', 'sitesService', controller]);
+  app.controller('mysitesController', ['$scope', '$location', 'authService', 'sitesService', controller]);
 
 })();

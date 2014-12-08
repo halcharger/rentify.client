@@ -38,6 +38,10 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/addsite.html',
       controller: 'addSiteController'
     })
+    .when('/deletesite', {
+      templateUrl: 'views/deletesite.html',
+      controller: 'deletesiteController'
+    })
     .otherwise({
       redirectTo: '/'
     });
