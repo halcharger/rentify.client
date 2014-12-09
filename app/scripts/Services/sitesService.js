@@ -43,11 +43,27 @@
     }
 
     function addSite(site){
-      return $http.post(baseUri + 'api/mysites/add', site);
+      return $http.post(baseUri + 'api/mysites/add', site)
+        .success(function(){
+          var mySitesCache = DSCacheFactory.get(sitesCacheKey);
+          var mysites = mySitesCache.get(sitesCacheKey);
+          mysites.push(site);
+          mySitesCache.put(sitesCacheKey, mysites);
+        });
     }
 
     function deleteSite(siteUniqueId){
-      return $http.delete(baseUri + 'api/mysites/delete?uniqueId=' + siteUniqueId);
+      return $http.delete(baseUri + 'api/mysites/delete?uniqueId=' + siteUniqueId)
+        .success(function(){
+          var mySitesCache = DSCacheFactory.get(sitesCacheKey);
+          var mysites = mySitesCache.get(sitesCacheKey);
+          for(var i = mysites.length - 1; i >= 0; i--) {
+            if(mysites[i].uniqueId === siteUniqueId) {
+              mysites.splice(i, 1);
+            }
+          }
+          mySitesCache.put(sitesCacheKey, mysites);
+        });
     }
 
     function setSiteSelectedForDeletion(site){
