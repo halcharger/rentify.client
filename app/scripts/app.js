@@ -11,7 +11,8 @@ var app = angular
     'LocalStorageModule',
     'angular-loading-bar',
     'services.config',
-    'toastr'
+    'toastr',
+    'angular-data.DSCacheFactory'
   ]);
 
 app.config(function ($httpProvider) {

@@ -11,12 +11,19 @@
 
     vm.getSites = function () {
       sitesService.getMySites()
-        .success(function (results) {
+        .then(function (results) {
           vm.sites = results;
-        })
-        .error(function (http, status, fnc, httpObj) {
+        },
+        function (http, status, fnc, httpObj) {
           console.log('Getting MySites failed: ', http, status, httpObj);
           vm.message = 'Getting My Sites failed. ' + (http.message ? http.message : '');
+        });
+    };
+
+    vm.refreshSites = function(){
+      return sitesService.refreshMySites()
+        .success(function(results){
+          vm.sites = results;
         });
     };
 
