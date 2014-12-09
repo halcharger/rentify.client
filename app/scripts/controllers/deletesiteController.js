@@ -19,7 +19,7 @@
     };
 
     vm.deleteSite = function(){
-      sitesService.deleteSite(vm.site.uniqueId)
+      return sitesService.deleteSite(vm.site.uniqueId)
         .success(function(){
           //TODO: notify user that delete was successful
           notificationService.success('The site: ' + vm.site.name + ' was successully deleted.')

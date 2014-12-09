@@ -33,7 +33,7 @@
       <div class="form-group">
         <span class="pull-right">
         <a href="#/mysites" class="btn btn-md btn-warning">Cancel</a>
-        <button class="btn btn-md btn-info" type="submit" data-ng-disabled="addSiteForm.$invalid">Add</button>
+        <spinner-Button text="Add" spinnerText="Adding..." buttonclass="btn-info btn-md" click="vm.addSite()" disabled="addSiteForm.$invalid"></spinner-Button>
           </span>
       </div>
     </div>

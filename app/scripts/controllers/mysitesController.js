@@ -37,6 +37,10 @@
 
     vm.getSites();
 
+    vm.spinnerClick = function(){
+      console.log('spinner button clicked');
+    }
+
     $scope.vm = vm;
 
   }

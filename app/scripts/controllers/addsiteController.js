@@ -13,7 +13,7 @@
     };
 
     vm.addSite = function () {
-      sitesService.addSite(vm.site).success(function (results) {
+      return sitesService.addSite(vm.site).success(function (results) {
         notificationService.success('New site [' + vm.site.name + '] successully added.');
         $location.path('mysites');
       })
