@@ -15,7 +15,7 @@ app.controller('signupController', ['$scope', '$location', '$timeout', 'authServ
 
     vm.signUp = function () {
 
-      authService.saveRegistration(vm.registration).then(function () {
+      return authService.saveRegistration(vm.registration).then(function () {
 
           vm.savedSuccessfully = true;
           vm.message = 'User has been registered successfully, you will be redirected to login page in 2 seconds.';

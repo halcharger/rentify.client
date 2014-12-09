@@ -18,7 +18,7 @@ app.controller('loginController', ['$scope', '$location', 'configuration', 'auth
 
       console.log('entering login function');
 
-      authService.login(vm.loginData)
+      return authService.login(vm.loginData)
         .success(function () {
           $location.path('/mysites');
         })
