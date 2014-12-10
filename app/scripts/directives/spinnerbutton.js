@@ -8,7 +8,7 @@
         buttonclass:'@',
         text:'@',
         spinnertext:'@',
-        disabled:'=',
+        isdisabled:'=',
         click:'&'
       },
       controller: function($scope){
@@ -24,7 +24,7 @@
           });
         }
       },
-      template: '<button class="btn {{buttonclass}} " data-ng-click="buttonClick()" data-ng-disabled="disabled || isClicked" >' +
+      template: '<button class="btn {{buttonclass}} " data-ng-click="buttonClick()" data-ng-disabled="isdisabled || isClicked" >' +
       '<i class="fa fa-circle-o-notch fa-spin" data-ng-show="isClicked"></i> {{buttonText}}' +
       '</button>'
     };
