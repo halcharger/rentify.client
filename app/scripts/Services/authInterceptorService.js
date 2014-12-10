@@ -23,7 +23,8 @@ app.factory('authInterceptorService', ['$q', '$location', '$injector', 'localSto
         var authService = $injector.get('authService');
         authService.refreshToken().then(function () {
           _retryHttpRequest(rejection.config, deferred);
-        }, function () {
+        }, function (httpData) {
+          console.log('failed to refresh token: ', httpData);
           authService.logOut();
           $location.path('/login');
           deferred.reject(rejection);

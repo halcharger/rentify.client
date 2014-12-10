@@ -102,7 +102,7 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
     };
 
     var _refreshToken = function () {
-
+      console.log('refreshing token...');
       var deferred = $q.defer();
 
       var authData = localStorageService.get('authorizationData');
