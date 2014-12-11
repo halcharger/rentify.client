@@ -17,7 +17,11 @@
         $scope.buttonClick = function(){
           $scope.buttonText = $scope.spinnertext;
           $scope.isClicked = true;
-          $scope.click().then(function(){}, function(){
+          $scope.click().then(function(){
+            //on success
+            $scope.buttonText = $scope.text;
+            $scope.isClicked = false;
+          }, function(){
             //on error
             $scope.buttonText = $scope.text;
             $scope.isClicked = false;

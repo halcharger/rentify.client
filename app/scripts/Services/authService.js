@@ -2,7 +2,6 @@
 app.factory('authService', ['$q', '$injector', '$location', 'localStorageService', 'configuration',
   function ($q, $injector, $location, localStorageService, configuration) {
 
-    console.log('configuration: ' + configuration);
     var serviceBase = configuration.serverBaseUri;
     var $http;
     var authServiceFactory = {};
@@ -32,9 +31,7 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
     };
 
     var _redirectToLoginIfNotAuthenticated = function () {
-      console.log('checking if user is authenticated... [' + serviceBase + ']')
       if (!_authentication.isAuth) {
-        console.log('user is not authenticated, redirecting to login view.')
         $location.path('login');
       }
     };

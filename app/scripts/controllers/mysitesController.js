@@ -37,13 +37,15 @@
         });
     };
 
-    function deleteSite(site){
-      console.log(site);
-      sitesService.setSiteSelectedForDeletion(site);
+    vm.deleteSite = function(site){
+      sitesService.setSelectedSite(site);
       $location.path('deletesite');
     };
 
-    vm.deleteSite = deleteSite;
+    vm.editSite = function(site){
+      sitesService.setSelectedSite(site);
+      $location.path('editsite');
+    };
 
     vm.getSites();
 

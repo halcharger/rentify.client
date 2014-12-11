@@ -7,7 +7,7 @@
 
     var sitesCacheKey = 'mysites';
     var baseUri = configuration.serverBaseUri;
-    var siteSelectedForDeletion;
+    var selectedSite;
 
     DSCacheFactory(sitesCacheKey, {
       maxAge: 90000, // Items added to this cache expire after 15 minutes.
@@ -66,20 +66,20 @@
         });
     }
 
-    function setSiteSelectedForDeletion(site){
-      siteSelectedForDeletion = site;
-    };
-
-    function getSiteSelectedForDeletion(){
-      return siteSelectedForDeletion;
-    };
 
     var factory = {};
     factory.getMySites = getMySites;
     factory.addSite = addSite;
     factory.deleteSite = deleteSite;
-    factory.setSiteSelectedForDeletion = setSiteSelectedForDeletion;
-    factory.getSiteSelectedForDeletion = getSiteSelectedForDeletion;
+    factory.setSelectedSite = function(site){
+      selectedSite = site;
+    };
+    factory.getSelectedSite = function(){
+      return selectedSite;
+    };
+    factory.clearSelectedSite = function(){
+      selectedSite = {};
+    };
     factory.refreshMySites = refreshMySites;
     return factory;
 

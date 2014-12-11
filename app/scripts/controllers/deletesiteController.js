@@ -7,14 +7,14 @@
 
     var vm = {};
     vm.message = '';
-    vm.site = sitesService.getSiteSelectedForDeletion();
+    vm.site = sitesService.getSelectedSite();
 
     if (!vm.site){
       $location.path('mysites');
     }
 
     vm.cancel = function(){
-      sitesService.setSiteSelectedForDeletion({});
+      sitesService.clearSelectedSite();
       $location.path('mysites');
     };
 

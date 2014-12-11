@@ -12,7 +12,8 @@ var app = angular
     'angular-loading-bar',
     'services.config',
     'toastr',
-    'angular-data.DSCacheFactory'
+    'angular-data.DSCacheFactory',
+    'ui.bootstrap'
   ]);
 
 app.config(function ($httpProvider) {
@@ -43,6 +44,10 @@ app.config(function ($routeProvider) {
     .when('/deletesite', {
       templateUrl: 'views/deletesite.html',
       controller: 'deletesiteController'
+    })
+    .when('/editsite', {
+      templateUrl: 'views/editsite.html',
+      controller: 'editsiteController'
     })
     .otherwise({
       redirectTo: '/'
