@@ -44,7 +44,7 @@
 
     vm.editSite = function(site){
       sitesService.setSelectedSite(site);
-      $location.path('editsite');
+      $location.path('editsite-theme');
     };
 
     vm.getSites();

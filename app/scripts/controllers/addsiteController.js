@@ -16,7 +16,7 @@
       return sitesService.addSite(vm.site).success(function (results) {
         notificationService.success('New site [' + vm.site.name + '] successully added.');
         sitesService.setSelectedSite(vm.site);
-        $location.path('editsite');
+        $location.path('editsite-theme');
       })
         .error(function (http, status, fnc, httpObj) {
           console.log('Adding new site failed: ', http, status, httpObj);

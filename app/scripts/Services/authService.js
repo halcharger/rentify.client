@@ -71,10 +71,10 @@ app.factory('authService', ['$q', '$injector', '$location', 'localStorageService
           _authentication.useRefreshTokens = loginData.useRefreshTokens;
 
         })
-        .error(function (http, status, fnc, httpObj) {
-          console.log('Error encountered logging in (authService):', http, status, httpObj);
+        .error(function () {
           _logOut();
         });
+
     };
 
     var _logOut = function () {

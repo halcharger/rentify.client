@@ -23,7 +23,7 @@ app.config(function ($httpProvider) {
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'views/main.html'
+      templateUrl: 'views/dashboard.html'
     })
     .when('/login', {
       templateUrl: 'views/login.html',
@@ -45,9 +45,17 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/deletesite.html',
       controller: 'deletesiteController'
     })
-    .when('/editsite', {
-      templateUrl: 'views/editsite.html',
-      controller: 'editsiteController'
+    .when('/editsite-theme', {
+      templateUrl: 'views/editsitetheme.html',
+      controller: 'editSiteThemeController'
+    })
+    .when('/editsite-pages', {
+      templateUrl: 'views/editSitePages.html',
+      controller: 'editSitePagesController'
+    })
+    .when('/editsite-propertydetails-overview', {
+      templateUrl: 'views/editsitepropertydetailsoverview.html',
+      controller: 'editSitePropertyDetailsOverviewController'
     })
     .otherwise({
       redirectTo: '/'

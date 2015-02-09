@@ -1,0 +1,29 @@
+<page-content-container page-heading="EDIT SITE: {{vm.site.name}}">
+  <configure-site-tabs active-tab="PropertyDetails">
+    <property-details-navigation active-tab="Overview" property-name="property name">
+    </property-details-navigation>
+    <default-panel panel-heading="Description">
+      <div class="form-group">
+        <label for="siteName">Site Name</label>
+        <input type="text" id="siteName" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mainTitle">Main Title</label>
+        <input type="text" id="mainTitle" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="subTitle">Sub Title / Tagline</label>
+        <input type="text" id="subTitle" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="propertyDescription">Property description</label>
+        <textarea id="propertyDescription" class="form-control" rows="3"></textarea>
+      </div>
+    </default-panel>
+
+    <div class="clearfix">
+      <button class="btn btn-info pull-right">Apply</button>
+    </div>
+
+  </configure-site-tabs>
+</page-content-container>

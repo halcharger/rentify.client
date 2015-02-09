@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function controller($scope, $location, authService, sitesService) {
+  function controller($scope, authService, sitesService) {
 
     authService.redirectToLoginIfNotAuthenticated();
 
@@ -12,6 +12,6 @@
 
   }
 
-  app.controller('editsiteController', ['$scope', '$location', 'authService', 'sitesService', controller]);
+  app.controller('editSitePropertyDetailsOverviewController', ['$scope', 'authService', 'sitesService', controller]);
 
 })();

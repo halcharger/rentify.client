@@ -17,15 +17,21 @@ app.controller('loginController', ['$scope', '$location', 'configuration', 'auth
     vm.login = function () {
 
       console.log('entering login function');
+      vm.message = '';
 
       return authService.login(vm.loginData)
         .success(function () {
           $location.path('/mysites');
-        })
+        });
+      /*
         .error(function (http, status, fnc, httpObj) {
           console.log('Error encountered logging in:', http, status, httpObj);
-          vm.message = http.error_description;
+          if (http)
+            vm.message = http.error_description;
+          else
+            vm.message = 'Failed to connect to the server, please try again.';
         });
+        */
     };
 
     vm.authExternalProvider = function (provider) {

@@ -9,7 +9,7 @@
 
     vm.logOut = function () {
       authService.logOut();
-      $location.path('/home');
+      $location.path('/login');
     };
 
     vm.authentication = authService.authentication;
