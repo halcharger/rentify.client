@@ -52,6 +52,10 @@
         });
     }
 
+    function updateTheme(uniqueId, themeId){
+      return $http.post(baseUri + 'api/mysites/updatetheme', {uniqueId: uniqueId, themeId: themeId});
+    }
+
     function deleteSite(siteUniqueId){
       return $http.delete(baseUri + 'api/mysites/delete?uniqueId=' + siteUniqueId)
         .success(function(){
@@ -71,6 +75,7 @@
     factory.getMySites = getMySites;
     factory.addSite = addSite;
     factory.deleteSite = deleteSite;
+    factory.updateTheme = updateTheme;
     factory.setSelectedSite = function(site){
       selectedSite = site;
     };

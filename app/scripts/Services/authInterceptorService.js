@@ -28,6 +28,9 @@ app.factory('authInterceptorService', ['$rootScope', '$q', '$location', '$inject
           }
           msg = '<strong>Failed to register user due to:</strong><BR/>' + errors.join('<br/>');
         }
+        else if (rejection.data && rejection.data.message){
+          msg = rejection.data.message;
+        }
       }
 
       $rootScope.$broadcast('globalErrorEvent', msg);

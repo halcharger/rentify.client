@@ -13,15 +13,12 @@
     };
 
     vm.addSite = function () {
-      return sitesService.addSite(vm.site).success(function (results) {
-        notificationService.success('New site [' + vm.site.name + '] successully added.');
-        sitesService.setSelectedSite(vm.site);
-        $location.path('editsite-theme');
-      })
-        .error(function (http, status, fnc, httpObj) {
-          console.log('Adding new site failed: ', http, status, httpObj);
-          vm.message = 'Adding new site failed. ' + (http.message ? http.message : '');
-        })
+      return sitesService.addSite(vm.site)
+        .success(function (results) {
+          notificationService.success('New site [' + vm.site.name + '] successully added.');
+          sitesService.setSelectedSite(vm.site);
+          $location.path('editsite-theme');
+        });
     }
 
     $scope.vm = vm;
