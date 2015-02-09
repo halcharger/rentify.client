@@ -1,29 +1,73 @@
-<div data-ng-include="'views/main.html'"></div>
-<form class="form-login" role="form">
-  <h2 class="form-login-heading">Sign up</h2>
-
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Email" data-ng-model="vm.registration.email" required
-           autofocus>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Username" data-ng-model="vm.registration.userName" required>
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" placeholder="Password" data-ng-model="vm.registration.password"
-           required>
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" placeholder="Confirm Password"
-           data-ng-model="vm.registration.confirmPassword" required>
-  </div>
-  <div class="form-group">
-    <spinner-button text="Sign up" spinnertext="Signing up..." buttonclass="btn-info btn-block" click="vm.signUp()"></spinner-button>
-  </div>
-  <div class="form-group">
-    <div data-ng-hide="vm.message == ''"
-         data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
-      {{vm.message}}
+<!-- BEGIN PAGE HEAD -->
+<div class="page-head">
+  <div class="container">
+    <!-- BEGIN PAGE TITLE -->
+    <div class="page-title">
+      <h1>SIGNUP</h1>
     </div>
+    <!-- END PAGE TITLE -->
   </div>
-</form>
+</div>
+<!-- END PAGE HEAD -->
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content">
+  <div class="container">
+    <div class="portlet box blue-hoki">
+      <div class="portlet-title">
+        <div class="caption">
+          <i class="fa fa-cogs"></i> Signup with your details below
+        </div>
+      </div>
+      <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form class="form-horizontal">
+          <div class="form-body">
+            <div class="form-group">
+              <label class="col-md-3 control-label">email</label>
+              <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Email" data-ng-model="vm.registration.email" required
+                       autofocus>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">username</label>
+              <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Username" data-ng-model="vm.registration.userName" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">password</label>
+              <div class="col-md-4">
+                <input type="password" class="form-control" placeholder="Password" data-ng-model="vm.registration.password"
+                       required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">confirm password</label>
+              <div class="col-md-4">
+                <input type="password" class="form-control" placeholder="Confirm Password"
+                       data-ng-model="vm.registration.confirmPassword" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-3"></div>
+              <div class="col-md-4">
+                <spinner-button text="Sign up" spinnertext="Signing up..." buttonclass="btn-info btn-block" click="vm.signUp()"></spinner-button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-3"></div>
+              <div data-ng-hide="vm.message == ''"
+                   data-ng-class="(vm.savedSuccessfully) ? 'col-md-4 note note-success note-bordered clearfix' : 'col-md-4 note note-danger note-bordered clearfix'">
+                {{vm.message}}
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- END FORM-->
+      </div>
+    </div>
+
+  </div>
+</div>

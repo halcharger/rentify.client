@@ -1,11 +1,30 @@
-<h3>Edit Site: {{vm.site.name}}</h3>
+<page-content-container page-heading="EDIT SITE: {{vm.site.name}}">
+    <configure-site-tabs active-tab="ThemeAndStyling">
+          <!-- BEGIN TAB CONTENT -->
+          <h4>Select the theme and styling details for your website</h4>
 
-<tabSet>
-  <tab heading="General">
-    General
-  </tab>
-  <tab heading="Pages">
-    <div data-ng-include="'views/pages.html'"></div>
-  </tab>
-</tabSet>
+          <p>&nbsp;</p>
 
+          <form class="form-horizontal">
+            <div class="form-body">
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="theme">Select Theme:</label>
+
+                <div class="col-md-3">
+                  <select id="theme" class="form-control">
+                    <option>lavilla</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <div class="row">
+                  <div class="col-md-offset-2 col-md-3">
+                    <button class="btn btn-info">Apply</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- END TAB CONTENT -->
+    </configure-site-tabs>
+</page-content-container>
