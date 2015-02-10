@@ -7,7 +7,7 @@ app.factory('authInterceptorService', ['$rootScope', '$q', '$location', '$inject
 
     function broadcastFriendlyErrorMessage(rejection){
       console.log('global generic error handler: rejection:', rejection);
-      var msg = 'We are sorry but you experienced an unexpected error. We have done all we can to notify the right people so all you can do right now is try again.';
+      var msg = '<p>We are sorry but you experienced an unexpected error. We have done all we can to notify the right people so all you can do right now is try again.</p>';
 
       //the case where the client cannot connect to the server
       if (!rejection.data && rejection.status == 0 && rejection.statusText === ''){
@@ -26,10 +26,15 @@ app.factory('authInterceptorService', ['$rootScope', '$q', '$location', '$inject
               errors.push(rejection.data.modelState[key][i]);
             }
           }
-          msg = '<strong>Failed to register user due to:</strong><BR/>' + errors.join('<br/>');
+          msg = '<strong>Failed to save changes due to:</strong><BR/>' + errors.join('<br/>');
         }
         else if (rejection.data && rejection.data.message){
           msg = rejection.data.message;
+        }
+      }
+      else if (rejection.status == 500){
+        if (rejection.data.exceptionMessage){
+          msg = msg + '<p><strong>Exception Type:</strong></p><p>' + rejection.data.exceptionType + '</p>'
         }
       }
 

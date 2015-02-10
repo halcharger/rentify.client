@@ -15,7 +15,9 @@
       deleteOnExpire: 'aggressive' // Items will be deleted from this cache right when they expire.
     });
 
-    function getMySites(){
+    var factory = {};
+
+    factory.getMySites = function(){
       var deferred = $q.defer(),
         start = new Date().getTime(),
         mySitesCache = DSCacheFactory.get(sitesCacheKey);
@@ -23,7 +25,7 @@
       if (mySitesCache.get(sitesCacheKey)){
         deferred.resolve(mySitesCache.get(sitesCacheKey));
       } else {
-        $http.post(baseUri + 'api/mysites')
+        $http.get(baseUri + 'api/mysites')
           .success(function(results){
             console.log('time taken for mysites request: ' + (new Date().getTime() - start) + 'ms');
             mySitesCache.put(sitesCacheKey, results);
@@ -31,18 +33,18 @@
           });
       }
       return deferred.promise;
-    }
+    };
 
-    function refreshMySites(){
-      return $http.post(baseUri + 'api/mysites')
+    factory.refreshMySites = function(){
+      return $http.get(baseUri + 'api/mysites')
         .success(function(results){
           var mySitesCache = DSCacheFactory.get(sitesCacheKey);
           mySitesCache.put(sitesCacheKey, results);
           return results;
         });
-    }
+    };
 
-    function addSite(site){
+    factory.addSite = function(site){
       return $http.post(baseUri + 'api/mysites/add', site)
         .success(function(){
           var mySitesCache = DSCacheFactory.get(sitesCacheKey);
@@ -50,13 +52,16 @@
           mysites.push(site);
           mySitesCache.put(sitesCacheKey, mysites);
         });
-    }
+    };
 
-    function updateTheme(uniqueId, themeId){
-      return $http.post(baseUri + 'api/mysites/updatetheme', {uniqueId: uniqueId, themeId: themeId});
-    }
+    factory.updateTheme = function(uniqueId, themeId){
+      return $http.post(baseUri + 'api/site/updatetheme', {uniqueId: uniqueId, themeId: themeId})
+        .success(function(){
+          refreshMySites();
+        });
+    };
 
-    function deleteSite(siteUniqueId){
+    factory.deleteSite = function(siteUniqueId){
       return $http.delete(baseUri + 'api/mysites/delete?uniqueId=' + siteUniqueId)
         .success(function(){
           var mySitesCache = DSCacheFactory.get(sitesCacheKey);
@@ -68,14 +73,16 @@
           }
           mySitesCache.put(sitesCacheKey, mysites);
         });
-    }
+    };
 
+    factory.getPropertyOverview = function(siteUniqueId){
+      return $http.get(baseUri + 'api/site/propertyoverview?siteUniqueId=' + siteUniqueId);
+    };
 
-    var factory = {};
-    factory.getMySites = getMySites;
-    factory.addSite = addSite;
-    factory.deleteSite = deleteSite;
-    factory.updateTheme = updateTheme;
+    factory.updatePropertyOverview = function(propertyOverview){
+      return $http.post(baseUri + 'api/site/updatepropertyoverview', propertyOverview)
+    };
+
     factory.setSelectedSite = function(site){
       selectedSite = site;
     };
@@ -85,7 +92,7 @@
     factory.clearSelectedSite = function(){
       selectedSite = {};
     };
-    factory.refreshMySites = refreshMySites;
+
     return factory;
 
   }
