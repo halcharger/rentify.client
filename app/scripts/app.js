@@ -53,9 +53,13 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/editSitePages.html',
       controller: 'editSitePagesController'
     })
-    .when('/editsite-propertydetails-overview', {
+    .when('/property-overview', {
       templateUrl: 'views/editsitepropertydetailsoverview.html',
       controller: 'editSitePropertyDetailsOverviewController'
+    })
+    .when('/property-location', {
+      templateUrl: 'views/editSitePropertyLocation.html',
+      controller: 'editSitePropertyLocationController'
     })
     .otherwise({
       redirectTo: '/'

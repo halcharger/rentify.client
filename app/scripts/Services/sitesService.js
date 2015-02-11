@@ -83,6 +83,14 @@
       return $http.post(baseUri + 'api/site/updatepropertyoverview', propertyOverview)
     };
 
+    factory.getLocation = function(siteUniqueId){
+      return $http.get(baseUri + 'api/site/location?siteUniqueId=' + siteUniqueId);
+    };
+
+    factory.updateLocation = function(location){
+      return $http.post(baseUri + 'api/site/updatelocation', location)
+    };
+
     factory.setSelectedSite = function(site){
       selectedSite = site;
     };
