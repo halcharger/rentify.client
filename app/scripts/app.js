@@ -13,7 +13,8 @@ var app = angular
     'services.config',
     'toastr',
     'angular-data.DSCacheFactory',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'flow'
   ]);
 
 app.config(function ($httpProvider) {

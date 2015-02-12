@@ -29,6 +29,11 @@
         });
     };
 
+    vm.mapImageUploadSuccess = function(msg){
+      console.log('map image upload success: ' + msg);
+    };
+
+
     $scope.vm = vm;
 
     vm.loadData ();

@@ -61,3 +61,58 @@ body {
 #loading-bar .bar {
   background: #954121;
 }
+
+
+/*ng-flow image upload util*/
+.thumbnail {
+  line-height: 20px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  word-break: normal;
+  max-width: 410px;
+  max-height: 310px;
+}
+.thumbnail img {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+.transfer-box {
+  margin-bottom: 5px;
+}
+.transfer-box .progress {
+  margin-bottom: 0;
+}
+
+.thumbnail {
+  line-height: 20px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  word-break: normal;
+}
+.thumbnail img {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.gallery-box {
+  width: 200px;
+  padding: 5px;
+  margin: 7px;
+  float: left;
+  min-height: 200px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.gallery-box .progress {
+  margin-bottom: 0;
+}
+.gallery-box .thumbnail {
+  height: 188px;
+  width: 188px;
+}
+.gallery-box .title {
+  height: 22px;
+  overflow: hidden;
+  display: block;
+}
