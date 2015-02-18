@@ -57,7 +57,7 @@
     factory.updateTheme = function(uniqueId, themeId){
       return $http.post(baseUri + 'api/site/updatetheme', {uniqueId: uniqueId, themeId: themeId})
         .success(function(){
-          refreshMySites();
+          factory.refreshMySites();
         });
     };
 
@@ -75,6 +75,10 @@
         });
     };
 
+    factory.removeGalleryImage = function(siteUniqueId, galleryId, imageUrl){
+      return $http.post(baseUri + 'api/site/removegalleryimage', {siteUniqueId: siteUniqueId, galleryId: galleryId, imageUrl: imageUrl});
+    };
+
     factory.getPropertyOverview = function(siteUniqueId){
       return $http.get(baseUri + 'api/site/propertyoverview?siteUniqueId=' + siteUniqueId);
     };
@@ -89,6 +93,22 @@
 
     factory.updateLocation = function(location){
       return $http.post(baseUri + 'api/site/updatelocation', location)
+    };
+
+    factory.getGallery = function(siteUniqueId){
+      return $http.get(baseUri + 'api/site/gallery?siteUniqueId=' + siteUniqueId);
+    };
+
+    factory.updateGallery = function(gallery){
+      return $http.post(baseUri + 'api/site/updategallery', gallery)
+    };
+
+    factory.getCustomMapImageUploadUrl = function(siteUniqueId){
+      return baseUri + 'api/site/mapimage/upload?siteUniqueId=' + siteUniqueId;
+    };
+
+    factory.getGalleryImageUploadUrl = function(siteUniqueId, galleryId){
+      return baseUri + 'api/site/gallery/upload?siteUniqueId=' + siteUniqueId + '&galleryId=' + galleryId;
     };
 
     factory.setSelectedSite = function(site){

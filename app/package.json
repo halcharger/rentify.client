@@ -1,0 +1,406 @@
+{
+  "Sites": [
+    {
+      "Name": "localhost",
+      "UniqueId": "localhost",
+      "ThemeId": "lavilla",
+      "MainTitle": "Welcome to Lavilla",
+      "SubTitle": "Were you looking for a holiday house?<br />You've just found one.",
+      "Property": {
+        "Overview": {
+          "Name": "prop name2",
+          "MainTitle": "some main title2",
+          "SubTitle": "some sub title2",
+          "Description": "some prop description2<br/>",
+          "Sleeps": 2,
+          "SquareMeters": 0,
+          "Rooms": {
+            "Bedrooms": 1,
+            "Lounges": 2,
+            "DiningRooms": 3,
+            "Kitchens": 4,
+            "Bathrooms": 5,
+            "Toilets": 7,
+            "Showers": 6,
+            "Sculleries": 9,
+            "Studies": 8,
+            "ReceptionRooms": 10,
+            "Pantries": 11,
+            "EntertainmentRooms": 12,
+            "CustomRoomsHtml": "some custom <br/> html about the rooms"
+          },
+          "Facts": {
+            "Accessible247": false,
+            "PetsWelcome": true,
+            "SecureOnsiteParking": false,
+            "HouseKeeper": true,
+            "SmokingAllowed": false,
+            "CustomFactsHtml": "some custom <br/> facts html"
+          },
+          "Amenities": {
+            "Dishwasher": false,
+            "Stove": true,
+            "MicrowaveOven": false,
+            "DSTV": true,
+            "TumbleDryer": false,
+            "CustomAmenitiesHtml": "some custom <p> amenities html</p>"
+          }
+        }
+      },
+      "Location": {
+        "AddressLine1": "address line 11",
+        "AddressLine2": "address line 22",
+        "AddressLine3": null,
+        "City": "capte town",
+        "Province": "western cape",
+        "Country": "suid afrika",
+        "PostCode": "4563",
+        "DirectionsHtml": "some custom <p> html directions to my property</p>",
+        "UseCustomMapIamge": false,
+        "UseCustomDirectionsPdf": false
+      },
+      "Gallery": {
+        "Id": "78cb3c68-61ca-4d42-9714-6f51e746a473",
+        "Name": null,
+        "Description": null,
+        "ImageUrls": null
+      },
+      "Pages": []
+    },
+    {
+      "Name": "deploy01",
+      "UniqueId": "deploy01",
+      "ThemeId": "lavilla",
+      "MainTitle": null,
+      "SubTitle": null,
+      "Property": {
+        "Overview": {
+          "Name": null,
+          "MainTitle": null,
+          "SubTitle": null,
+          "Description": null,
+          "Sleeps": 0,
+          "SquareMeters": 0,
+          "Rooms": {
+            "Bedrooms": 0,
+            "Lounges": 0,
+            "DiningRooms": 0,
+            "Kitchens": 0,
+            "Bathrooms": 0,
+            "Toilets": 0,
+            "Showers": 0,
+            "Sculleries": 0,
+            "Studies": 0,
+            "ReceptionRooms": 0,
+            "Pantries": 0,
+            "EntertainmentRooms": 0,
+            "CustomRoomsHtml": null
+          },
+          "Facts": {
+            "Accessible247": false,
+            "PetsWelcome": false,
+            "SecureOnsiteParking": false,
+            "HouseKeeper": false,
+            "SmokingAllowed": false,
+            "CustomFactsHtml": null
+          },
+          "Amenities": {
+            "Dishwasher": false,
+            "Stove": false,
+            "MicrowaveOven": false,
+            "DSTV": false,
+            "TumbleDryer": false,
+            "CustomAmenitiesHtml": null
+          }
+        }
+      },
+      "Location": {
+        "AddressLine1": null,
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "City": null,
+        "Province": null,
+        "Country": null,
+        "PostCode": null,
+        "DirectionsHtml": null,
+        "UseCustomMapIamge": false,
+        "UseCustomDirectionsPdf": false
+      },
+      "Gallery": {
+        "Id": "5f5cbc5d-365c-4780-a62f-a7078f1fec0f",
+        "Name": null,
+        "Description": null,
+        "ImageUrls": null
+      },
+      "Pages": []
+    },
+    {
+      "Name": "test site",
+      "UniqueId": "testsite01",
+      "ThemeId": "lavilla",
+      "MainTitle": null,
+      "SubTitle": null,
+      "Property": {
+        "Overview": {
+          "Name": null,
+          "MainTitle": null,
+          "SubTitle": null,
+          "Description": null,
+          "Sleeps": 0,
+          "SquareMeters": 0,
+          "Rooms": {
+            "Bedrooms": 0,
+            "Lounges": 0,
+            "DiningRooms": 0,
+            "Kitchens": 0,
+            "Bathrooms": 0,
+            "Toilets": 0,
+            "Showers": 0,
+            "Sculleries": 0,
+            "Studies": 0,
+            "ReceptionRooms": 0,
+            "Pantries": 0,
+            "EntertainmentRooms": 0,
+            "CustomRoomsHtml": null
+          },
+          "Facts": {
+            "Accessible247": false,
+            "PetsWelcome": false,
+            "SecureOnsiteParking": false,
+            "HouseKeeper": false,
+            "SmokingAllowed": false,
+            "CustomFactsHtml": null
+          },
+          "Amenities": {
+            "Dishwasher": false,
+            "Stove": false,
+            "MicrowaveOven": false,
+            "DSTV": false,
+            "TumbleDryer": false,
+            "CustomAmenitiesHtml": null
+          }
+        }
+      },
+      "Location": {
+        "AddressLine1": null,
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "City": null,
+        "Province": null,
+        "Country": null,
+        "PostCode": null,
+        "DirectionsHtml": null,
+        "UseCustomMapIamge": false,
+        "UseCustomDirectionsPdf": false
+      },
+      "Gallery": {
+        "Id": "370a8216-cbc3-45c4-91bc-4012e8f95fcb",
+        "Name": null,
+        "Description": null,
+        "ImageUrls": null
+      },
+      "Pages": []
+    },
+    {
+      "Name": "testy",
+      "UniqueId": "testical",
+      "ThemeId": "lavilla",
+      "MainTitle": null,
+      "SubTitle": null,
+      "Property": {
+        "Overview": {
+          "Name": null,
+          "MainTitle": null,
+          "SubTitle": null,
+          "Description": null,
+          "Sleeps": 0,
+          "SquareMeters": 0,
+          "Rooms": {
+            "Bedrooms": 0,
+            "Lounges": 0,
+            "DiningRooms": 0,
+            "Kitchens": 0,
+            "Bathrooms": 0,
+            "Toilets": 0,
+            "Showers": 0,
+            "Sculleries": 0,
+            "Studies": 0,
+            "ReceptionRooms": 0,
+            "Pantries": 0,
+            "EntertainmentRooms": 0,
+            "CustomRoomsHtml": null
+          },
+          "Facts": {
+            "Accessible247": false,
+            "PetsWelcome": false,
+            "SecureOnsiteParking": false,
+            "HouseKeeper": false,
+            "SmokingAllowed": false,
+            "CustomFactsHtml": null
+          },
+          "Amenities": {
+            "Dishwasher": false,
+            "Stove": false,
+            "MicrowaveOven": false,
+            "DSTV": false,
+            "TumbleDryer": false,
+            "CustomAmenitiesHtml": null
+          }
+        }
+      },
+      "Location": {
+        "AddressLine1": null,
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "City": null,
+        "Province": null,
+        "Country": null,
+        "PostCode": null,
+        "DirectionsHtml": null,
+        "UseCustomMapIamge": false,
+        "UseCustomDirectionsPdf": false
+      },
+      "Gallery": {
+        "Id": "8108e924-f4d7-4776-905c-cff07de22380",
+        "Name": null,
+        "Description": null,
+        "ImageUrls": null
+      },
+      "Pages": []
+    },
+    {
+      "Name": "balls",
+      "UniqueId": "balls",
+      "ThemeId": null,
+      "MainTitle": null,
+      "SubTitle": null,
+      "Property": {
+        "Overview": {
+          "Name": null,
+          "MainTitle": null,
+          "SubTitle": null,
+          "Description": null,
+          "Sleeps": 0,
+          "SquareMeters": 0,
+          "Rooms": {
+            "Bedrooms": 0,
+            "Lounges": 0,
+            "DiningRooms": 0,
+            "Kitchens": 0,
+            "Bathrooms": 0,
+            "Toilets": 0,
+            "Showers": 0,
+            "Sculleries": 0,
+            "Studies": 0,
+            "ReceptionRooms": 0,
+            "Pantries": 0,
+            "EntertainmentRooms": 0,
+            "CustomRoomsHtml": null
+          },
+          "Facts": {
+            "Accessible247": false,
+            "PetsWelcome": false,
+            "SecureOnsiteParking": false,
+            "HouseKeeper": false,
+            "SmokingAllowed": false,
+            "CustomFactsHtml": null
+          },
+          "Amenities": {
+            "Dishwasher": false,
+            "Stove": false,
+            "MicrowaveOven": false,
+            "DSTV": false,
+            "TumbleDryer": false,
+            "CustomAmenitiesHtml": null
+          }
+        }
+      },
+      "Location": {
+        "AddressLine1": null,
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "City": null,
+        "Province": null,
+        "Country": null,
+        "PostCode": null,
+        "DirectionsHtml": null,
+        "UseCustomMapIamge": false,
+        "UseCustomDirectionsPdf": false
+      },
+      "Gallery": {
+        "Id": "bfc0c590-c6ed-41ec-94d5-3cc62077b439",
+        "Name": null,
+        "Description": null,
+        "ImageUrls": null
+      },
+      "Pages": []
+    },
+    {
+      "Name": "balls to the walls",
+      "UniqueId": "ballswalls",
+      "ThemeId": null,
+      "MainTitle": null,
+      "SubTitle": null,
+      "Property": {
+        "Overview": {
+          "Name": null,
+          "MainTitle": null,
+          "SubTitle": null,
+          "Description": null,
+          "Sleeps": 0,
+          "SquareMeters": 0,
+          "Rooms": {
+            "Bedrooms": 0,
+            "Lounges": 0,
+            "DiningRooms": 0,
+            "Kitchens": 0,
+            "Bathrooms": 0,
+            "Toilets": 0,
+            "Showers": 0,
+            "Sculleries": 0,
+            "Studies": 0,
+            "ReceptionRooms": 0,
+            "Pantries": 0,
+            "EntertainmentRooms": 0,
+            "CustomRoomsHtml": null
+          },
+          "Facts": {
+            "Accessible247": false,
+            "PetsWelcome": false,
+            "SecureOnsiteParking": false,
+            "HouseKeeper": false,
+            "SmokingAllowed": false,
+            "CustomFactsHtml": null
+          },
+          "Amenities": {
+            "Dishwasher": false,
+            "Stove": false,
+            "MicrowaveOven": false,
+            "DSTV": false,
+            "TumbleDryer": false,
+            "CustomAmenitiesHtml": null
+          }
+        }
+      },
+      "Location": {
+        "AddressLine1": null,
+        "AddressLine2": null,
+        "AddressLine3": null,
+        "City": null,
+        "Province": null,
+        "Country": null,
+        "PostCode": null,
+        "DirectionsHtml": null,
+        "UseCustomMapIamge": false,
+        "UseCustomDirectionsPdf": false
+      },
+      "Gallery": {
+        "Id": "a6406047-4992-45eb-a0f8-f065bb99c09e",
+        "Name": null,
+        "Description": null,
+        "ImageUrls": null
+      },
+      "Pages": []
+    }
+  ]
+}

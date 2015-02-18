@@ -7,7 +7,6 @@
 
     var vm = {};
     vm.sites = [];
-    vm.message = '';
     vm.loadingSites = true;
 
     vm.getSites = function () {
@@ -18,8 +17,6 @@
           vm.loadingSites = false;
         },
         function (http, status, fnc, httpObj) {
-          console.log('Getting MySites failed: ', http, status, httpObj);
-          vm.message = 'Getting My Sites failed. ' + (http.message ? http.message : '');
           vm.loadingSites = false;
         });
     };
@@ -32,7 +29,6 @@
           vm.loadingSites = false;
         })
         .error(function(){
-          vm.message = 'Refreshing My Sites failed.';
           vm.loadingSites = false;
         });
     };

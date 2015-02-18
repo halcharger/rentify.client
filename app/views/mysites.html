@@ -13,9 +13,7 @@
 <div class="page-content">
   <div class="container">
 
-    <p>
-      <div data-ng-hide="vm.message == ''" class="alert alert-danger">{{vm.message}}</div>
-    </p>
+    <global-error-feedback></global-error-feedback>
 
     <div data-ng-show="vm.loadingSites" class="text-center">
       <h2><i class="fa fa-cog fa-spin"></i> Loading your sites for you...</h2>

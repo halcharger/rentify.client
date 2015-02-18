@@ -14,12 +14,21 @@ var app = angular
     'toastr',
     'angular-data.DSCacheFactory',
     'ui.bootstrap',
-    'flow'
+    'flow',
+    'angular-images-loaded'
   ]);
 
 app.config(function ($httpProvider) {
   $httpProvider.interceptors.push('authInterceptorService');
 });
+
+app.config(['flowFactoryProvider', function(flowFactoryProvider){
+  flowFactoryProvider.defaults = {
+    permanentErrors: [500, 501],
+    maxChunkRetries: 2,
+    chunkRetryInterval: 5000
+  };
+}]);
 
 app.config(function ($routeProvider) {
   $routeProvider
@@ -61,6 +70,10 @@ app.config(function ($routeProvider) {
     .when('/property-location', {
       templateUrl: 'views/editSitePropertyLocation.html',
       controller: 'editSitePropertyLocationController'
+    })
+    .when('/property-gallery', {
+      templateUrl: 'views/editSitePropertyGallery.html',
+      controller: 'editSitePropertyGalleryController'
     })
     .otherwise({
       redirectTo: '/'

@@ -85,6 +85,7 @@ body {
 }
 
 .thumbnail {
+  max-width: 210px;
   line-height: 20px;
   margin-bottom: 5px;
   overflow: hidden;
@@ -115,4 +116,48 @@ body {
   height: 22px;
   overflow: hidden;
   display: block;
+}
+
+
+/*images loaded styles*/
+span.is-loading, span.is-broken {
+  height: 140px;
+  min-width: 100px;
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0 5px 5px 0;
+  background-color: black;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+span img {
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -ms-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+span.is-loading {
+  background-color: black;
+  background-image: url('http://desandro.github.io/imagesloaded/assets/loading.gif');
+}
+
+span.is-broken {
+  background-image: url('http://desandro.github.io/imagesloaded/assets/broken.png');
+  background-color: #be3730;
+  width: 120px;
+}
+
+span.is-loading img,
+span.is-broken img {
+  opacity: 0;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+span.is-loaded img{
+  max-height: 200px;
+  max-width: 200px;
 }
