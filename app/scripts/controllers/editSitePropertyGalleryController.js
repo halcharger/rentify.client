@@ -46,7 +46,6 @@
       console.log('imgurl: ' + imgurl);
       sitesService.removeGalleryImage(siteUniqueId, galleryId, imgurl)
         .success(function(){
-          console.log('reloading gallery after successfully removing image');
           vm.loadData();
       });
     };
@@ -66,6 +65,7 @@
 
     vm.onFlowComplete = function(){
       notificationService.info('File uploads complete.');
+      vm.loadData();
     }
 
 
