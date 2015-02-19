@@ -29,12 +29,12 @@
         <div class="form-group clearfix">
           <h4>Current images in gallery</h4>
 
-          <div class="col-md-2" ng-repeat="imgurl in vm.gallery.imageUrls">
+          <div class="col-md-2" ng-repeat="img in vm.gallery.images">
             <div class="thumbnail">
-              <img ng-src="{{imgurl}}">
+              <img ng-src="{{img.azureImageUrl}}">
             </div>
             <div class="btn-set pull-right margin-top-10">
-              <a class="btn btn-xs btn-danger" ng-click="vm.removeGalleryImage(vm.site.uniqueId, vm.gallery.id, imgurl)">Remove</a>
+              <a class="btn btn-xs btn-danger" ng-click="vm.removeGalleryImage(vm.site.uniqueId, vm.gallery.id, img.azureImageUrl)">Remove</a>
             </div>
           </div>
         </div>

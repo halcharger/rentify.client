@@ -17,6 +17,7 @@
     vm.loadData = function(){
       return sitesService.getGallery(vm.site.uniqueId)
         .success(function(results){
+          console.log('gallery: ', results)
           vm.gallery = results;
         });
     };
