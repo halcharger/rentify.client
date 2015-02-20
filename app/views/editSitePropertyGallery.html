@@ -31,7 +31,7 @@
 
           <div class="col-md-2" ng-repeat="img in vm.gallery.images">
             <div class="thumbnail">
-              <img ng-src="{{img.azureImageUrl}}">
+              <img ng-src="{{img.imageResizerUrl}}?w=140&mode=crop">
             </div>
             <div class="btn-set pull-right margin-top-10">
               <a class="btn btn-xs btn-danger" ng-click="vm.removeGalleryImage(vm.site.uniqueId, vm.gallery.id, img.azureImageUrl)">Remove</a>

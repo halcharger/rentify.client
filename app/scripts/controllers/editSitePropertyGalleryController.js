@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function controller($scope, $location, authService, sitesService, notificationService, localStorageService) {
+  function controller($scope, $location, authService, sitesService, notificationService, localStorageService, configuration) {
 
     authService.redirectToLoginIfNotAuthenticated();
 
@@ -17,6 +17,9 @@
     vm.loadData = function(){
       return sitesService.getGallery(vm.site.uniqueId)
         .success(function(results){
+          for(var i = 0; i < results.images.length; i++){
+            results.images[i].imageResizerUrl = configuration.serverBaseUri + results.images[i].imageResizerUrl.substring(1);
+          }
           console.log('gallery: ', results)
           vm.gallery = results;
         });
@@ -76,6 +79,6 @@
 
   }
 
-  app.controller('editSitePropertyGalleryController', ['$scope', '$location', 'authService', 'sitesService', 'notificationService', 'localStorageService', controller]);
+  app.controller('editSitePropertyGalleryController', ['$scope', '$location', 'authService', 'sitesService', 'notificationService', 'localStorageService', 'configuration', controller]);
 
 })();
